@@ -11,6 +11,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.commons.events.model.ListingDebtCommandEvent;
 import seedu.address.commons.events.model.UserDataChangedEvent;
 import seedu.address.commons.events.model.UserLoggedOutEvent;
 import seedu.address.commons.events.ui.JumpToListRequestEvent;
@@ -21,8 +22,6 @@ import seedu.address.model.group.FriendshipStatus;
 import seedu.address.model.group.Group;
 import seedu.address.model.jio.Jio;
 import seedu.address.model.restaurant.Restaurant;
-import seedu.address.model.user.User;
-
 /**
  * Panel containing the list of user data.
  */
@@ -62,7 +61,6 @@ public class ListPanel<T> extends UiPart<Region> {
         if(type == "Friends") {
             listView.setItems((ObservableList<T>) event.user.getFriends());
         }
-
         if(type == "FriendRequests") {
             listView.setItems((ObservableList<T>) event.user.getFriendRequests());
         }
@@ -83,7 +81,6 @@ public class ListPanel<T> extends UiPart<Region> {
         listView.setItems(null);
     }
 
-
     /**
      * Scrolls to the {@code Card} at the {@code index} and selects it.
      */
@@ -100,7 +97,6 @@ public class ListPanel<T> extends UiPart<Region> {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         scrollTo(event.targetIndex);
     }
-
     /**
      * Custom {@code ListCell} that displays the graphics of a {@code Restaurant} using a {@code RestaurantCard}.
      */

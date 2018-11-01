@@ -13,7 +13,9 @@ import seedu.address.model.Model;
  * List the logged in user's debt requests.
  */
 public class ListDebtRequestSentCommand extends Command {
-    public static final String COMMAND_WORD = "listDebtSentRequest";
+    public static final String COMMAND_WORD = "listDebtRequestSent";
+
+    public static final String MESSAGE_SUCCESS = "Listed all debt request received.";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": List all request login user sent.";
@@ -27,8 +29,8 @@ public class ListDebtRequestSentCommand extends Command {
         if (!model.isCurrentlyLoggedIn()) {
             throw new NotLoggedInCommandException(COMMAND_WORD);
         }
-        model.getDebtRequestSent();
-        return null;
+        model.debtListing(model.getDebtRequestSent());
+        return new CommandResult(String.format(MESSAGE_SUCCESS));
     }
 
 }

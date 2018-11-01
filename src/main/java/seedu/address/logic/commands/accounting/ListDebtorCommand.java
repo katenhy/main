@@ -15,6 +15,8 @@ import seedu.address.model.Model;
 public class ListDebtorCommand extends Command {
     public static final String COMMAND_WORD = "listDebtor";
 
+    public static final String MESSAGE_SUCCESS = "Listed all debtor.";
+
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": List all login user's debtor.";
 
@@ -27,8 +29,8 @@ public class ListDebtorCommand extends Command {
         if (!model.isCurrentlyLoggedIn()) {
             throw new NotLoggedInCommandException(COMMAND_WORD);
         }
-        model.getDebtorList();
-        return null;
+        model.debtListing(model.getDebtorList());
+        return new CommandResult(String.format(MESSAGE_SUCCESS));
     }
 }
 

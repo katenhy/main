@@ -15,6 +15,8 @@ import seedu.address.model.Model;
 public class ListDebtHistoryCommand extends Command {
     public static final String COMMAND_WORD = "listDebtHistory";
 
+    public static final String MESSAGE_SUCCESS = "Listed all debt history.";
+
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": List all login user's Debt History.";
 
@@ -27,8 +29,8 @@ public class ListDebtHistoryCommand extends Command {
         if (!model.isCurrentlyLoggedIn()) {
             throw new NotLoggedInCommandException(COMMAND_WORD);
         }
-        model.getDebtList();
-        return null;
+        model.debtListing(model.getDebtList());
+        return new CommandResult(String.format(MESSAGE_SUCCESS));
     }
 
 }

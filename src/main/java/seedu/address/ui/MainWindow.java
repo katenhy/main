@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import seedu.address.commons.core.Config;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.commons.events.model.ListingDebtCommandEvent;
 import seedu.address.commons.events.ui.ExitAppRequestEvent;
 import seedu.address.commons.events.ui.ShowHelpRequestEvent;
 import seedu.address.logic.Logic;
@@ -312,6 +313,16 @@ public class MainWindow extends UiPart<Stage> {
             featuresListPanelPlaceholder.getChildren().add(debtListPanel.getRoot());
         }
     }
+    @Subscribe
+    @FXML
+    void handleListingDebtCommandEvent(ListingDebtCommandEvent event) {
+        if (!logic.isCurrentlyLoggedIn()) {
+            browserPanel.loadNotLoggedInPage();
+        } else {
+            debtListPanel = new ListPanel<>(event.listingItem);
+            featuresListPanelPlaceholder.getChildren().add(debtListPanel.getRoot());
+        }
+    }
 
     /**
      * Updates list panel with login user's received request.
@@ -338,4 +349,5 @@ public class MainWindow extends UiPart<Stage> {
             featuresListPanelPlaceholder.getChildren().add(friendListPanel.getRoot());
         }
     }
+
 }

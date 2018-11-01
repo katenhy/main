@@ -23,7 +23,6 @@ import seedu.address.model.Model;
 import seedu.address.model.Name;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.accounting.Amount;
-import seedu.address.model.accounting.Debt;
 import seedu.address.model.accounting.DebtId;
 import seedu.address.model.accounting.DebtStatus;
 import seedu.address.model.group.Friendship;
@@ -219,27 +218,27 @@ public class AddCommandTest {
         }
 
         @Override
-        public ObservableList<Debt> getDebtList() {
+        public ObservableList<Object> getDebtList() {
             return null;
         }
 
         @Override
-        public ObservableList<Debt> getCreditorList() {
+        public ObservableList<Object> getCreditorList() {
             return null;
         }
 
         @Override
-        public ObservableList<Debt> getDebtorList() {
+        public ObservableList<Object> getDebtorList() {
             return null;
         }
 
         @Override
-        public ObservableList<Debt> getDebtRequestReceived() {
+        public ObservableList<Object> getDebtRequestReceived() {
             return null;
         }
 
         @Override
-        public ObservableList<Debt> getDebtRequestSent() {
+        public ObservableList<Object> getDebtRequestSent() {
             return null;
         }
         // To be Done Later, fake tests for now

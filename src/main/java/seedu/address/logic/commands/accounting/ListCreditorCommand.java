@@ -15,6 +15,8 @@ import seedu.address.model.Model;
 public class ListCreditorCommand extends Command {
     public static final String COMMAND_WORD = "listCreditor";
 
+    public static final String MESSAGE_SUCCESS = "Listed all creditor.";
+
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": List all login user's creditor.";
 
@@ -27,8 +29,8 @@ public class ListCreditorCommand extends Command {
         if (!model.isCurrentlyLoggedIn()) {
             throw new NotLoggedInCommandException(COMMAND_WORD);
         }
-        model.getCreditorList();
-        return null;
+        model.debtListing(model.getCreditorList());
+        return new CommandResult(String.format(MESSAGE_SUCCESS));
     }
 }
 

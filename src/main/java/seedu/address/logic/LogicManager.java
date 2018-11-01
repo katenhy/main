@@ -105,6 +105,11 @@ public class LogicManager extends ComponentManager implements Logic {
     }
 
     @Override
+    public void debtListing(ObservableList<Debt> debt) {
+        model.debtListing(debt);
+    }
+
+    @Override
     public ListElementPointer getHistorySnapshot() {
         return new ListElementPointer(history.getHistory());
     }

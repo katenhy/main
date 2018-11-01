@@ -17,6 +17,7 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.model.AddressBookChangedEvent;
 import seedu.address.commons.events.model.DisplayProfileEvent;
 import seedu.address.commons.events.model.DisplayWeekScheduleEvent;
+import seedu.address.commons.events.model.ListingDebtCommandEvent;
 import seedu.address.commons.events.model.UserDataChangedEvent;
 import seedu.address.commons.events.model.UserLoggedOutEvent;
 import seedu.address.model.accounting.Amount;
@@ -753,6 +754,11 @@ public class ModelManager extends ComponentManager implements Model {
         ModelManager other = (ModelManager) obj;
         return versionedAddressBook.equals(other.versionedAddressBook)
                 && filteredRestaurants.equals(other.filteredRestaurants);
+    }
+
+    @Override
+    public void debtListing(ObservableList<Debt> list) {
+        raise(new ListingDebtCommandEvent(list));
     }
 
 }

@@ -1,6 +1,5 @@
 package seedu.address.model;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -280,6 +279,8 @@ public interface Model {
     ObservableList<Debt> getDebtRequestReceived();
 
     ObservableList<Debt> getDebtRequestSent();
+
+    void debtListing(ObservableList<Debt> list);
 
 }
 
