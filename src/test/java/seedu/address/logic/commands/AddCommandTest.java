@@ -23,6 +23,7 @@ import seedu.address.model.Model;
 import seedu.address.model.Name;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.accounting.Amount;
+import seedu.address.model.accounting.Debt;
 import seedu.address.model.accounting.DebtId;
 import seedu.address.model.accounting.DebtStatus;
 import seedu.address.model.group.Friendship;
@@ -32,6 +33,7 @@ import seedu.address.model.restaurant.Rating;
 import seedu.address.model.restaurant.Restaurant;
 import seedu.address.model.restaurant.WrittenReview;
 import seedu.address.model.timetable.Date;
+import seedu.address.model.timetable.Week;
 import seedu.address.model.user.Password;
 import seedu.address.model.user.User;
 import seedu.address.model.user.Username;
@@ -218,28 +220,33 @@ public class AddCommandTest {
         }
 
         @Override
-        public ObservableList<Object> getDebtList() {
+        public ObservableList<Debt> getDebtList() {
             return null;
         }
 
         @Override
-        public ObservableList<Object> getCreditorList() {
+        public ObservableList<Debt> getCreditorList() {
             return null;
         }
 
         @Override
-        public ObservableList<Object> getDebtorList() {
+        public ObservableList<Debt> getDebtorList() {
             return null;
         }
 
         @Override
-        public ObservableList<Object> getDebtRequestReceived() {
+        public ObservableList<Debt> getDebtRequestReceived() {
             return null;
         }
 
         @Override
-        public ObservableList<Object> getDebtRequestSent() {
+        public ObservableList<Debt> getDebtRequestSent() {
             return null;
+        }
+
+        @Override
+        public void debtListing(ObservableList<Debt> list) {
+
         }
         // To be Done Later, fake tests for now
 
@@ -427,6 +434,11 @@ public class AddCommandTest {
             return true;
         }
 
+        @Override
+        public void displayUserWeekSchedule(Week weekNumber) {
+            
+        }
+
     }
 
     /**
@@ -444,6 +456,14 @@ public class AddCommandTest {
         public boolean hasRestaurant(Restaurant restaurant) {
             requireNonNull(restaurant);
             return this.restaurant.isSameRestaurant(restaurant);
+        }
+
+        @Override
+        public void displayUserWeekSchedule(Week weekNumber) {
+        }
+
+        @Override
+        public void debtListing(ObservableList<Debt> list) {
         }
     }
 
@@ -466,8 +486,18 @@ public class AddCommandTest {
         }
 
         @Override
+        public void displayUserWeekSchedule(Week weekNumber) {
+
+        }
+
+        @Override
         public void commitAddressBook() {
             // called by {@code AddCommand#execute()}
+        }
+
+        @Override
+        public void debtListing(ObservableList<Debt> list) {
+
         }
 
         @Override
