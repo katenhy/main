@@ -405,6 +405,31 @@ Examples:
 
 * `deleteDebtRequest u/Kate123 amt/4.30 id/18103013460314`
 
+=== List all login user's creditor
+
+List all creditor of the login user in list panel.
+Format: `listCreditor`
+
+=== List all login user's debtor
+
+List all debtor of the login user in list panel.
+Format: `listDebtor`
+
+=== List all login user's debt request received
+
+List all debt request received by login user from other user in list panel.
+Format: `listDebtRequestReceived`
+
+=== List all login user's debt request sent
+
+List all debt request sent by login user to other user in list panel.
+Format: `listDebtRequestSent`
+
+=== List all login user's debt history
+
+List all debt history(regardless of status) of the login user in list panel.
+Format: `listDebtor`
+
 === Deleting a restaurant : `delete` [DEPRECIATED, DO NOT USE]
 
 Deletes the specified restaurant from the address book. +
@@ -634,3 +659,7 @@ e.g. `clearDebt u/kate amt/1.3`
 e.g. `acceptDebtRequest u/kate amt/7.9 id/181030224951280`
 * *Delete Debt Request* : `deleteDebtRequest` +
 e.g. `deleteDebtRequest u/kate amt/7.9 id/181030224951280`
+* *List Creditor* : `listCreditor` +
+* *List Debtor* : `listDebtor` +
+* *List Debt Request Received* : `listDebtRequestReceived` +
+* *List Debt Request Sent* : `listDebtRequestSent`
