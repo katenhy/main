@@ -1,5 +1,9 @@
 package seedu.address.testutil;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import seedu.address.model.Name;
 import seedu.address.model.user.Email;
 import seedu.address.model.user.Password;
@@ -7,10 +11,6 @@ import seedu.address.model.user.Phone;
 import seedu.address.model.user.RestaurantReview;
 import seedu.address.model.user.User;
 import seedu.address.model.user.Username;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * A utility class to help with building User objects.
@@ -98,6 +98,9 @@ public class UserBuilder {
         return this;
     }
 
+    /**
+     * Builds user with username, password, name, phone, email.
+     */
     public User build() {
         User toReturn = new User(username, password, name, phone, email);
         for (RestaurantReview restaurantReview: restaurantReviewList) {

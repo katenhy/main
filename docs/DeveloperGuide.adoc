@@ -286,8 +286,8 @@ image::AddingUserReviewToRestaurantActivityDiagram.png[width="800"]
 ** Pros: Ease of displaying the list of reviews of a specific Restaurant
 ** Pros: Ease of updating the Overall Rating of a Restaurant
 ** Cons: Contains a number of repeated code. +
-*** E.g. UserReview and RestaurantReview are identical except that UserReview stores the Restaurant Name 
-while RestaurantReview stores the Username of the User. 
+*** E.g. UserReview and RestaurantReview are identical except that UserReview stores the Restaurant Name
+while RestaurantReview stores the Username of the User.
 
 * **Alternative 2:** Saves the review in restaurant adddressbook.
 ** Pros: Ease of Implementation (Significantly fewer classes)

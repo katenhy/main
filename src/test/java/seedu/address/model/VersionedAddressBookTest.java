@@ -20,7 +20,8 @@ public class VersionedAddressBookTest {
 
     private final ReadOnlyAddressBook addressBookWithAmy = new AddressBookBuilder().withRestaurant(AMY).build();
     private final ReadOnlyAddressBook addressBookWithBob = new AddressBookBuilder().withRestaurant(BOB).build();
-    private final ReadOnlyAddressBook addressBookWithCarl = new AddressBookBuilder().withRestaurant(RESTAURANT_C).build();
+    private final ReadOnlyAddressBook addressBookWithCarl = new AddressBookBuilder().withRestaurant(RESTAURANT_C)
+            .build();
     private final ReadOnlyAddressBook emptyAddressBook = new AddressBookBuilder().build();
 
     @Test

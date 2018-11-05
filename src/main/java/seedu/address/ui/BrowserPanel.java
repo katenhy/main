@@ -70,8 +70,8 @@ public class BrowserPanel extends UiPart<Region> {
 
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedInputStream bin = new BufferedInputStream(MainApp.class.
-                    getResourceAsStream(FXML_FILE_FOLDER + RESTAURANT_PAGE));
+            BufferedInputStream bin = new BufferedInputStream(MainApp.class
+                    .getResourceAsStream(FXML_FILE_FOLDER + RESTAURANT_PAGE));
             byte[] contents = new byte[1024];
             int bytesRead = 0;
             while ((bytesRead = bin.read(contents)) != -1) {
@@ -108,8 +108,8 @@ public class BrowserPanel extends UiPart<Region> {
     private void loadDisplayWeekSchedulePage(List<Date> dates) {
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedInputStream bin = new BufferedInputStream(MainApp.class.
-                    getResourceAsStream(FXML_FILE_FOLDER + SCHEDULE_PAGE));
+            BufferedInputStream bin = new BufferedInputStream(MainApp.class
+                    .getResourceAsStream(FXML_FILE_FOLDER + SCHEDULE_PAGE));
             byte[] contents = new byte[1024];
             int bytesRead = 0;
             while ((bytesRead = bin.read(contents)) != -1) {
@@ -145,8 +145,8 @@ public class BrowserPanel extends UiPart<Region> {
     private void loadDebtPage(Debt debt) {
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedInputStream bin = new BufferedInputStream(MainApp.class.
-                    getResourceAsStream(FXML_FILE_FOLDER + DEBT_PAGE));
+            BufferedInputStream bin = new BufferedInputStream(MainApp.class
+                    .getResourceAsStream(FXML_FILE_FOLDER + DEBT_PAGE));
             byte[] contents = new byte[1024];
             int bytesRead = 0;
             while ((bytesRead = bin.read(contents)) != -1) {
@@ -177,8 +177,8 @@ public class BrowserPanel extends UiPart<Region> {
     private void loadFriendPage(Friendship friendship) {
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedInputStream bin = new BufferedInputStream(MainApp.class.
-                    getResourceAsStream(FXML_FILE_FOLDER + FRIEND_PAGE));
+            BufferedInputStream bin = new BufferedInputStream(MainApp.class
+                    .getResourceAsStream(FXML_FILE_FOLDER + FRIEND_PAGE));
             byte[] contents = new byte[1024];
             int bytesRead = 0;
             while ((bytesRead = bin.read(contents)) != -1) {
@@ -210,8 +210,8 @@ public class BrowserPanel extends UiPart<Region> {
     private void loadUserProfilePage(User user) {
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedInputStream bin = new BufferedInputStream(MainApp.class.
-                    getResourceAsStream(FXML_FILE_FOLDER + USER_PAGE));
+            BufferedInputStream bin = new BufferedInputStream(MainApp.class
+                    .getResourceAsStream(FXML_FILE_FOLDER + USER_PAGE));
             byte[] contents = new byte[1024];
             int bytesRead = 0;
             while ((bytesRead = bin.read(contents)) != -1) {
@@ -249,8 +249,8 @@ public class BrowserPanel extends UiPart<Region> {
 
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedInputStream bin = new BufferedInputStream(MainApp.class.
-                    getResourceAsStream(FXML_FILE_FOLDER + JIO_PAGE));
+            BufferedInputStream bin = new BufferedInputStream(MainApp.class
+                    .getResourceAsStream(FXML_FILE_FOLDER + JIO_PAGE));
             byte[] contents = new byte[1024];
             int bytesRead = 0;
             while ((bytesRead = bin.read(contents)) != -1) {
@@ -282,8 +282,8 @@ public class BrowserPanel extends UiPart<Region> {
 
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedInputStream bin = new BufferedInputStream(MainApp.class.
-                    getResourceAsStream(FXML_FILE_FOLDER + GROUP_PAGE));
+            BufferedInputStream bin = new BufferedInputStream(MainApp.class
+                    .getResourceAsStream(FXML_FILE_FOLDER + GROUP_PAGE));
             byte[] contents = new byte[1024];
             int bytesRead = 0;
             while ((bytesRead = bin.read(contents)) != -1) {
@@ -330,8 +330,8 @@ public class BrowserPanel extends UiPart<Region> {
 
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedInputStream bin = new BufferedInputStream(MainApp.class.
-                    getResourceAsStream(FXML_FILE_FOLDER + NOT_LOGGED_IN_PAGE));
+            BufferedInputStream bin = new BufferedInputStream(MainApp.class
+                    .getResourceAsStream(FXML_FILE_FOLDER + NOT_LOGGED_IN_PAGE));
             byte[] contents = new byte[1024];
             int bytesRead = 0;
             while ((bytesRead = bin.read(contents)) != -1) {
@@ -386,9 +386,9 @@ public class BrowserPanel extends UiPart<Region> {
         } else if (event.getNewSelection() instanceof Jio) {
             loadJioPage((Jio) event.getNewSelection());
         } else if (event.getNewSelection() instanceof Group) {
-            loadGroupPage((Group)event.getNewSelection());
+            loadGroupPage((Group) event.getNewSelection());
         } else if (event.getNewSelection() instanceof Friendship) {
-            loadFriendPage((Friendship)event.getNewSelection());
+            loadFriendPage((Friendship) event.getNewSelection());
         }
     }
 

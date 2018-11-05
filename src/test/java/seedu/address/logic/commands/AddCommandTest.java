@@ -435,10 +435,7 @@ public class AddCommandTest {
         }
 
         @Override
-        public void displayUserWeekSchedule(Week weekNumber) {
-            
-        }
-
+        public void displayUserWeekSchedule(Week weekNumber) {}
     }
 
     /**

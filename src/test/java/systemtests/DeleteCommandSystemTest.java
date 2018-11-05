@@ -8,7 +8,7 @@ import static seedu.address.testutil.TestUtil.getLastIndex;
 import static seedu.address.testutil.TestUtil.getMidIndex;
 import static seedu.address.testutil.TestUtil.getRestaurant;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_RESTAURANT;
-import static seedu.address.testutil.TypicalRestaurants.KEYWORD_MATCHING_MEIER;
+import static seedu.address.testutil.TypicalRestaurants.KEYWORD_MATCHING_STARBUCKS;
 
 import org.junit.Test;
 
@@ -60,7 +60,7 @@ public class DeleteCommandSystemTest extends AddressBookSystemTest {
         /* ------------------ Performing delete operation while a filtered list is being shown ---------------------- */
 
         /* Case: filtered restaurant list, delete index within bounds of address book and restaurant list -> deleted */
-        showRestaurantsWithName(KEYWORD_MATCHING_MEIER);
+        showRestaurantsWithName(KEYWORD_MATCHING_STARBUCKS);
         Index index = INDEX_FIRST_RESTAURANT;
         assertTrue(index.getZeroBased() < getModel().getFilteredRestaurantList().size());
         assertCommandSuccess(index);
@@ -69,7 +69,7 @@ public class DeleteCommandSystemTest extends AddressBookSystemTest {
         but out of bounds of restaurant list
          * -> rejected
          */
-        showRestaurantsWithName(KEYWORD_MATCHING_MEIER);
+        showRestaurantsWithName(KEYWORD_MATCHING_STARBUCKS);
         int invalidIndex = getModel().getAddressBook().getRestaurantList().size();
         command = DeleteCommand.COMMAND_WORD + " " + invalidIndex;
         assertCommandFailure(command, MESSAGE_INVALID_RESTAURANT_DISPLAYED_INDEX);

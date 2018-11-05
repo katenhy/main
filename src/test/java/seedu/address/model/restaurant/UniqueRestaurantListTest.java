@@ -5,8 +5,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
-import static seedu.address.testutil.TypicalRestaurants.RESTAURANT_A;
 import static seedu.address.testutil.TypicalRestaurants.BOB;
+import static seedu.address.testutil.TypicalRestaurants.RESTAURANT_A;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -46,7 +46,8 @@ public class UniqueRestaurantListTest {
     @Test
     public void contains_restaurantWithSameIdentityFieldsInList_returnsTrue() {
         uniqueRestaurantList.add(RESTAURANT_A);
-        Restaurant editedAlice = new RestaurantBuilder(RESTAURANT_A).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
+        Restaurant editedAlice = new RestaurantBuilder(RESTAURANT_A).withAddress(VALID_ADDRESS_BOB)
+                .withTags(VALID_TAG_HUSBAND)
                 .build();
         assertTrue(uniqueRestaurantList.contains(editedAlice));
     }
@@ -94,7 +95,8 @@ public class UniqueRestaurantListTest {
     @Test
     public void setRestaurant_editedRestaurantHasSameIdentity_success() {
         uniqueRestaurantList.add(RESTAURANT_A);
-        Restaurant editedAlice = new RestaurantBuilder(RESTAURANT_A).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
+        Restaurant editedAlice = new RestaurantBuilder(RESTAURANT_A).withAddress(VALID_ADDRESS_BOB)
+                .withTags(VALID_TAG_HUSBAND)
                 .build();
         uniqueRestaurantList.setRestaurant(RESTAURANT_A, editedAlice);
         UniqueRestaurantList expectedUniqueRestaurantList = new UniqueRestaurantList();

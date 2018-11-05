@@ -16,13 +16,13 @@ import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_HUSBAND;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
-import static seedu.address.testutil.TypicalRestaurants.RESTAURANT_A;
 import static seedu.address.testutil.TypicalRestaurants.AMY;
 import static seedu.address.testutil.TypicalRestaurants.BOB;
-import static seedu.address.testutil.TypicalRestaurants.RESTAURANT_C;
 import static seedu.address.testutil.TypicalRestaurants.HOON;
 import static seedu.address.testutil.TypicalRestaurants.IDA;
-import static seedu.address.testutil.TypicalRestaurants.KEYWORD_MATCHING_MEIER;
+import static seedu.address.testutil.TypicalRestaurants.KEYWORD_MATCHING_STARBUCKS;
+import static seedu.address.testutil.TypicalRestaurants.RESTAURANT_A;
+import static seedu.address.testutil.TypicalRestaurants.RESTAURANT_C;
 
 import org.junit.Test;
 
@@ -91,7 +91,7 @@ public class AddCommandSystemTest extends AddressBookSystemTest {
         /* -------------------------- Perform add operation on the shown filtered list ------------------------------ */
 
         /* Case: filters the restaurant list before adding -> added */
-        showRestaurantsWithName(KEYWORD_MATCHING_MEIER);
+        showRestaurantsWithName(KEYWORD_MATCHING_STARBUCKS);
         assertCommandSuccess(IDA);
 
         /* ------------ Perform add operation while a restaurant card is selected --------------- */

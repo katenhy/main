@@ -63,7 +63,7 @@ public class XmlAdaptedRestaurantTest {
     @Test
     public void toModelType_nullPhone_throwsIllegalValueException() {
         XmlAdaptedRestaurant restaurant = new XmlAdaptedRestaurant(
-                VALID_NAME, null, VALID_ADDRESS, VALID_TAGS,VALID_REVIEWS);
+                VALID_NAME, null, VALID_ADDRESS, VALID_TAGS, VALID_REVIEWS);
         String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName());
         Assert.assertThrows(IllegalValueException.class, expectedMessage, restaurant::toModelType);
     }

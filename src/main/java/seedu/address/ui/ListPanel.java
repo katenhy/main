@@ -58,10 +58,11 @@ public class ListPanel<T> extends UiPart<Region> {
     @Subscribe
     private void handleUserDataChangedEvent(UserDataChangedEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
-        if(type == "Friends") {
+        if (type == "Friends") {
             listView.setItems((ObservableList<T>) event.user.getFriends());
         }
-        if(type == "FriendRequests") {
+
+        if (type == "FriendRequests") {
             listView.setItems((ObservableList<T>) event.user.getFriendRequests());
         }
 
@@ -122,12 +123,14 @@ public class ListPanel<T> extends UiPart<Region> {
                     type = "Group";
                 }
 
-                if (item instanceof Friendship && ((Friendship) item).getFrienshipStatus().equals(FriendshipStatus.ACCEPTED)) {
+                if (item instanceof Friendship
+                        && ((Friendship) item).getFrienshipStatus().equals(FriendshipStatus.ACCEPTED)) {
                     setGraphic(new UserCard(((Friendship) item).getFriendUser(), getIndex() + 1).getRoot());
                     type = "Friends";
                 }
 
-                if (item instanceof Friendship && ((Friendship) item).getFrienshipStatus().equals(FriendshipStatus.PENDING)) {
+                if (item instanceof Friendship
+                        && ((Friendship) item).getFrienshipStatus().equals(FriendshipStatus.PENDING)) {
                     setGraphic(new UserCard(((Friendship) item).getFriendUser(), getIndex() + 1).getRoot());
                     type = "FriendRequests";
                 }

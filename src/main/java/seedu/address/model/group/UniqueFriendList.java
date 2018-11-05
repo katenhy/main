@@ -7,12 +7,6 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import seedu.address.model.accounting.Debt;
-import seedu.address.model.accounting.UniqueDebtList;
-import seedu.address.model.accounting.exception.DebtNotFoundException;
-import seedu.address.model.accounting.exception.DuplicateDebtException;
-import seedu.address.model.group.exception.DuplicateFriendshipException;
-import seedu.address.model.group.exception.FriendshipNotFoundException;
 
 /**
  * A list of debts that enforces uniqueness between its elements and does not allow nulls.

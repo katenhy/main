@@ -182,7 +182,7 @@ Format: `createJio n/NAME w/WEEK d/DAY h/TIME a/PLACE [g/GROUP NAME]`
 Examples:
 
 * `createJio n/MALA w/1 d/mon h/1200 a/FineFood`
-* `createJio n/saporeFriends w/1 d/mon t/1800 a/Sapore g/mygroup`
+* `createJio n/saporeFriends w/1 d/mon h/1800 a/Sapore g/mygroup`
 
 === Joining an existing jio: `joinJio`
 
@@ -318,7 +318,7 @@ Examples:
 
 * `listScheduleForWeek w/5`
 
-===  Find jios that fit a user’s timetable for a given NUS academic week: `findJio`
+===  Find jios that fit a user’s timetable for a given NUS academic week: `findJio` [COMING IN V2.0]
 
 Views the list of free time to eat on those dates. +
 Format: `findJio WEEKNUMBER`
@@ -327,7 +327,7 @@ Examples:
 
 * `findJio week8`
 
-===  Find common timeslots with friends: `findTime`
+===  Find common timeslots with friends: `findTime` [COMING IN V2.0]
 
 Find common eating timeslots with a list of friends. +
 Format: `findTime [w/week number] [f/name of friend] [f/name of friend] ….`
@@ -336,7 +336,7 @@ Examples:
 
 * `findTime week6 f/Aiden  f/Chelsea f/Evan Mok f/Meena f/Kate`
 
-===  Add NUSMODS schedule to block out calendar: `addNUSMODS`
+===  Add NUSMODS schedule to block out calendar: `addNUSMODS` [COMING IN V2.0]
 
 Block out schedules on the timetable using a NUSMODS link. +
 Format: `addNUSMODS NUSMODSLINK`
@@ -345,7 +345,7 @@ Examples:
 
 * `addCalendar nusmods.com/g91j3g08sdgl13`
 
-===  Add Google Calendar schedule to block out calendar: `addCalendar`
+===  Add Google Calendar schedule to block out calendar: `addCalendar` [COMING IN V2.0]
 
 Block out schedules on the timetable using a google account. +
 Format: `addCalendar USERNAME PASSWORD`

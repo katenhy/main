@@ -1,7 +1,7 @@
 package systemtests;
 
 import static seedu.address.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
-import static seedu.address.testutil.TypicalRestaurants.KEYWORD_MATCHING_MEIER;
+import static seedu.address.testutil.TypicalRestaurants.KEYWORD_MATCHING_STARBUCKS;
 
 import org.junit.Test;
 
@@ -44,7 +44,7 @@ public class ClearCommandSystemTest extends AddressBookSystemTest {
 
         /* Case: filters the restaurant list before clearing -> entire address book cleared */
         executeCommand(UndoCommand.COMMAND_WORD); // restores the original address book
-        showRestaurantsWithName(KEYWORD_MATCHING_MEIER);
+        showRestaurantsWithName(KEYWORD_MATCHING_STARBUCKS);
         assertCommandSuccess(ClearCommand.COMMAND_WORD);
         assertSelectedCardUnchanged();
 

@@ -82,14 +82,6 @@ public class User {
         return email;
     }
 
-    //public List<Friendship> getFriendRequests() {
-        //return friendRequests;
-    //}
-
-//    public List<Friendship> getFriends() {
-//        return friends;
-//    }
-
     public List<Group> getGroupRequests() {
         return groupRequests;
     }
@@ -104,6 +96,10 @@ public class User {
 
     public List<RestaurantReview> getRestaurantReviews() {
         return restaurantReviews;
+    }
+
+    public String listFriends() {
+        return friends.toString();
     }
 
     /**
@@ -188,13 +184,6 @@ public class User {
         }
         return this;
     }
-
-    /**
-     * @return String of all the user's friends separated by newline character.
-     */
-    //public String getFriends() {
-        //return listHelperFriend(friends.asUnmodifiableObservableList());
-    //}
 
     public ObservableList<Friendship> getFriends() {
         UniqueFriendList toReturn = new UniqueFriendList();

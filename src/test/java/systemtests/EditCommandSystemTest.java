@@ -25,7 +25,7 @@ import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_RESTAURANT;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_RESTAURANT;
 import static seedu.address.testutil.TypicalRestaurants.AMY;
 import static seedu.address.testutil.TypicalRestaurants.BOB;
-import static seedu.address.testutil.TypicalRestaurants.KEYWORD_MATCHING_MEIER;
+import static seedu.address.testutil.TypicalRestaurants.KEYWORD_MATCHING_STARBUCKS;
 
 import org.junit.Test;
 
@@ -109,7 +109,7 @@ public class EditCommandSystemTest extends AddressBookSystemTest {
         /* ------------------ Performing edit operation while a filtered list is being shown ------------------------ */
 
         /* Case: filtered restaurant list, edit index within bounds of address book and restaurant list -> edited */
-        showRestaurantsWithName(KEYWORD_MATCHING_MEIER);
+        showRestaurantsWithName(KEYWORD_MATCHING_STARBUCKS);
         index = INDEX_FIRST_RESTAURANT;
         assertTrue(index.getZeroBased() < getModel().getFilteredRestaurantList().size());
         command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + " " + NAME_DESC_BOB;
@@ -120,7 +120,7 @@ public class EditCommandSystemTest extends AddressBookSystemTest {
         /* Case: filtered restaurant list, edit index within bounds of address book but out of bounds of restaurant list
          * -> rejected
          */
-        showRestaurantsWithName(KEYWORD_MATCHING_MEIER);
+        showRestaurantsWithName(KEYWORD_MATCHING_STARBUCKS);
         int invalidIndex = getModel().getAddressBook().getRestaurantList().size();
         assertCommandFailure(EditCommand.COMMAND_WORD + " " + invalidIndex + NAME_DESC_BOB,
                 Messages.MESSAGE_INVALID_RESTAURANT_DISPLAYED_INDEX);

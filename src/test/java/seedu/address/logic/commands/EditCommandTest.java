@@ -24,6 +24,7 @@ import seedu.address.logic.commands.EditCommand.EditRestaurantDescriptor;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
+import seedu.address.model.UserData;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.restaurant.Restaurant;
 import seedu.address.testutil.EditRestaurantDescriptorBuilder;
@@ -34,7 +35,7 @@ import seedu.address.testutil.RestaurantBuilder;
  */
 public class EditCommandTest {
 
-    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
+    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs(), new UserData());
     private CommandHistory commandHistory = new CommandHistory();
 
     @Test
@@ -45,7 +46,8 @@ public class EditCommandTest {
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_RESTAURANT_SUCCESS, editedRestaurant);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs(),
+                new UserData());
         expectedModel.updateRestaurant(model.getFilteredRestaurantList().get(0), editedRestaurant);
         expectedModel.commitAddressBook();
 
@@ -67,7 +69,8 @@ public class EditCommandTest {
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_RESTAURANT_SUCCESS, editedRestaurant);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs(),
+                new UserData());
         expectedModel.updateRestaurant(lastRestaurant, editedRestaurant);
         expectedModel.commitAddressBook();
 
@@ -81,7 +84,8 @@ public class EditCommandTest {
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_RESTAURANT_SUCCESS, editedRestaurant);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs(),
+                new UserData());
         expectedModel.commitAddressBook();
 
         assertCommandSuccess(editCommand, model, commandHistory, expectedMessage, expectedModel);
@@ -99,7 +103,8 @@ public class EditCommandTest {
 
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_RESTAURANT_SUCCESS, editedRestaurant);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs(),
+                new UserData());
         expectedModel.updateRestaurant(model.getFilteredRestaurantList().get(0), editedRestaurant);
         expectedModel.commitAddressBook();
 
@@ -160,7 +165,8 @@ public class EditCommandTest {
         Restaurant restaurantToEdit = model.getFilteredRestaurantList().get(INDEX_FIRST_RESTAURANT.getZeroBased());
         EditRestaurantDescriptor descriptor = new EditRestaurantDescriptorBuilder(editedRestaurant).build();
         EditCommand editCommand = new EditCommand(INDEX_FIRST_RESTAURANT, descriptor);
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs(),
+                new UserData());
         expectedModel.updateRestaurant(restaurantToEdit, editedRestaurant);
         expectedModel.commitAddressBook();
 
@@ -202,7 +208,8 @@ public class EditCommandTest {
         Restaurant editedRestaurant = new RestaurantBuilder().build();
         EditRestaurantDescriptor descriptor = new EditRestaurantDescriptorBuilder(editedRestaurant).build();
         EditCommand editCommand = new EditCommand(INDEX_FIRST_RESTAURANT, descriptor);
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs(),
+                new UserData());
 
         showRestaurantAtIndex(model, INDEX_SECOND_RESTAURANT);
         Restaurant restaurantToEdit = model.getFilteredRestaurantList().get(INDEX_FIRST_RESTAURANT.getZeroBased());

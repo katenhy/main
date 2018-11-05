@@ -47,7 +47,7 @@ public class SampleDataUtil {
                     new WrittenReview("The food here is 5 stars. Just like the Singapore flag.")))
             .addUserReview(new UserReview(new Username("themyth"), new Rating(5),
                     new WrittenReview("I stalked LHL here.")));
-    
+
     public static Restaurant[] getSampleRestaurants() {
         return new Restaurant[] {
             new Restaurant(new Name("Waa Cow"), new Phone("63421111"),
@@ -76,14 +76,14 @@ public class SampleDataUtil {
 
     public static ReadOnlyAddressBook getSampleAddressBook() {
         AddressBook sampleAb = new AddressBook();
-        
+
         for (Restaurant sampleRestaurant : getSampleRestaurants()) {
             sampleAb.addRestaurant(sampleRestaurant);
         }
-        
+
         return sampleAb;
     }
-        
+
     /**
      * Returns a tag set containing the list of strings given.
      */

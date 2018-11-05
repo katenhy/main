@@ -2,9 +2,9 @@ package seedu.address.storage;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static seedu.address.testutil.TypicalRestaurants.RESTAURANT_A;
 import static seedu.address.testutil.TypicalRestaurants.HOON;
 import static seedu.address.testutil.TypicalRestaurants.IDA;
+import static seedu.address.testutil.TypicalRestaurants.RESTAURANT_A;
 import static seedu.address.testutil.TypicalRestaurants.getTypicalAddressBook;
 
 import java.io.IOException;

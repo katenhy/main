@@ -8,7 +8,7 @@ import static seedu.address.logic.commands.SelectCommand.MESSAGE_SELECT_RESTAURA
 import static seedu.address.testutil.TestUtil.getLastIndex;
 import static seedu.address.testutil.TestUtil.getMidIndex;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_RESTAURANT;
-import static seedu.address.testutil.TypicalRestaurants.KEYWORD_MATCHING_MEIER;
+import static seedu.address.testutil.TypicalRestaurants.KEYWORD_MATCHING_STARBUCKS;
 
 import org.junit.Test;
 
@@ -57,7 +57,7 @@ public class SelectCommandSystemTest extends AddressBookSystemTest {
         /* Case: filtered restaurant list, select index within bounds of address book but out of bounds of
         restaurant list -> rejected
          */
-        showRestaurantsWithName(KEYWORD_MATCHING_MEIER);
+        showRestaurantsWithName(KEYWORD_MATCHING_STARBUCKS);
         int invalidIndex = getModel().getAddressBook().getRestaurantList().size();
         assertCommandFailure(SelectCommand.COMMAND_WORD + " "
                 + invalidIndex, MESSAGE_INVALID_RESTAURANT_DISPLAYED_INDEX);

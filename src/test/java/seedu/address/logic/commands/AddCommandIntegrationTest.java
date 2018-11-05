@@ -10,6 +10,7 @@ import org.junit.Test;
 import seedu.address.logic.CommandHistory;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
+import seedu.address.model.UserData;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.restaurant.Restaurant;
 import seedu.address.testutil.RestaurantBuilder;
@@ -24,14 +25,14 @@ public class AddCommandIntegrationTest {
 
     @Before
     public void setUp() {
-        model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
+        model = new ModelManager(getTypicalAddressBook(), new UserPrefs(), new UserData());
     }
 
     @Test
     public void execute_newRestaurant_success() {
         Restaurant validRestaurant = new RestaurantBuilder().build();
 
-        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs(), new UserData());
         expectedModel.addRestaurant(validRestaurant);
         expectedModel.commitAddressBook();
 

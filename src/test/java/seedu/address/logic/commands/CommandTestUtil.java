@@ -31,9 +31,9 @@ import seedu.address.testutil.EditRestaurantDescriptorBuilder;
  */
 public class CommandTestUtil {
 
-    private static final UserReview VALID_USER_REVIEW = new UserReview(new Username("navekom"),
-            new Rating(3), new WrittenReview("I tried the Ultimate Beef Sushi" +
-            " Experience and they were delicious."));
+    public static final UserReview VALID_USER_REVIEW = new UserReview(new Username("navekom"),
+            new Rating(3), new WrittenReview("I tried the Ultimate Beef Sushi"
+            + " Experience and they were delicious."));
     public static final Reviews VALID_WAA_COW_REVIEWS = new Reviews("3.00",
             Collections.singletonList(VALID_USER_REVIEW));
 

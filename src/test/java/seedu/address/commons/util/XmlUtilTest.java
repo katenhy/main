@@ -44,8 +44,8 @@ public class XmlUtilTest {
     private static final List<XmlAdaptedTag> VALID_TAGS = Collections.singletonList(
             new XmlAdaptedTag("Western"));
     private static final String VALID_USERNAME = "navekom";
-    private static final String VALID_WRITTEN_REVIEW = "I tried the Ultimate Beef Sushi" +
-            " Experience and they were delicious.";
+    private static final String VALID_WRITTEN_REVIEW = "I tried the Ultimate Beef Sushi"
+            + " Experience and they were delicious.";
     private static final String VALID_USER_RATING = "3";
     private static final String VALID_OVERALL_RATING = "3.00";
 

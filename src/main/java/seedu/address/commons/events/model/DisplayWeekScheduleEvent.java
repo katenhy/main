@@ -17,7 +17,11 @@ public class DisplayWeekScheduleEvent extends BaseEvent {
     }
 
     @Override
-    public String toString() { return getClass().getSimpleName(); }
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 
-    public List<Date> getDisplayedWeekSchedule() { return dates; }
+    public List<Date> getDisplayedWeekSchedule() {
+        return dates;
+    }
 }

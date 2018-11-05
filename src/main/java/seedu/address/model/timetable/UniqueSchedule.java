@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import seedu.address.model.timetable.exceptions.DateNotFoundException;
 import seedu.address.model.timetable.exceptions.DuplicateDateException;
 import seedu.address.model.user.Username;
@@ -122,8 +120,8 @@ public class UniqueSchedule {
     }
 
     /**
-     * Returns an immutable sorted blocked date list for the NUS week, which throws {@code UnsupportedOperationException}
-     * if modification is attempted.
+     * Returns an immutable sorted blocked date list for the NUS week, which throws
+     * {@code UnsupportedOperationException} if modification is attempted.
      * @return the immutable list of all dates.
      */
     public List<Date> getAllBlockedDatesOnSchedule() {
@@ -157,6 +155,7 @@ public class UniqueSchedule {
     public static List<Date> generateDefaultWeekSchedule() {
         return generateFullScheduleForWeek(new Week("11"));
     }
+
     /**
      * Returns a full list of dates for the NUS week. Utility method to help getAllFreeDatesOnSchedule.
      * @return a full list of dates for the NUS week.
@@ -175,7 +174,8 @@ public class UniqueSchedule {
     }
 
     /**
-     * Returns a full list of dates for the day. The week that the day exists in must also be given. Utility method to help getAllFreeDatesOnSchedule.
+     * Returns a full list of dates for the day. The week that the day exists in must also be given.
+     * Utility method to help getAllFreeDatesOnSchedule.
      * @return a full list of dates for the day.
      */
     private static List<Date> generateFullScheduleForDay(Week week, Day day) {
